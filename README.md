@@ -1,7 +1,7 @@
 austese_install
 ===============
 
-All-in-one installer for AustESE tools and calliope.
+This is an all-in-one installer for AustESE.
 
 AustESE is a tool set for creating digital scholarly 
 editions. It is really a kind of back-end or project 
@@ -13,12 +13,19 @@ the required deb packages, creates a blank AustESE
 Drupal directory in the user's web-directory, and
 uploads a basic database (austese) to MySql. Finally
 it installs the calliope web-service to complete the 
-set. The user can then create projects for building DSEs.
-Completely customised front-ends or DSE websites can be 
-then constructed, based on the resources managed by the 
-AustESE project on any web-based platform, requiring 
-only the standard web technologies of HTML, Javascript 
-and CSS. 
+set. The user can then create projects for building 
+DSEs. It supports the five key operations of a DSE: 
+1) cataloguing via various metadata formats 2) Markup 
+via STIL (standard interval language) standoff 
+properties which allows full overlap 3) comaprison 
+via multi-version (MVD) documents 4) commentary via  
+Lorestore and OA annotations and 5) citations via 
+standoff properties and a citation service (yet to do).
+
+Once a project has been created, completely customised 
+front-ends or actual DSE websites can be constructed, 
+requiring only the standard web technologies of HTML, 
+Javascript and CSS. 
 
 AustESE is based on the Drupal content management
 system, and requires an Ubuntu or Debian Linux server
@@ -34,4 +41,8 @@ general tool set for creating any kind of digital
 scholarly edition and has been funded by the Australian 
 government's NECTaR initiative.
 
-As yet there is no manual.
+To Do's
+NMergeC will remove the file limit and reduce the memory 
+footprint. XML export needs to be added. The citation 
+service is not done. Text to image linking is incomplete. 
+As yet there is no manual. But a lot of it works.

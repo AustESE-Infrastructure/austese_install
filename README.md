@@ -45,6 +45,7 @@ scholarly edition and has been funded by the Australian
 government's NECTaR initiative.
 
 To Do's
+-------
 NMergeC will remove the file limit and reduce the memory 
 footprint. XML export needs to be added. The citation 
 service is not done. Text to image linking is incomplete. 

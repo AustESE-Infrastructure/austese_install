@@ -18,7 +18,7 @@ DSEs. It supports the five key operations of a DSE:
 1) cataloguing via various metadata formats 2) Markup 
 via STIL (standard interval language) standoff 
 properties which allows full overlap 3) comaprison 
-via multi-version (MVD) documents 4) commentary via  
+via multi-version (MVD) documents 4) commentary via 
 Lorestore and OA annotations and 5) citations via 
 standoff properties and a citation service (yet to do).
 
@@ -31,9 +31,12 @@ AustESE is based on the Drupal content management
 system, and requires an Ubuntu or Debian Linux server
 running Java with a JVM of around 2GB. Text files are 
 limited to around 50-75K per version, but images have 
-no size limitation. AustESE can import plain text, XML 
-or HTML, and export to HTML, MVD and text (with JSON 
-markup). It is hoped to add XML export later.
+no size limitation. Two other components are needed: 
+the calliope web-service for handling formatting and 
+MVDs, and Lorestore for annotations. Both run inside 
+Tomcat. AustESE can import plain text, XML or HTML, 
+and export to HTML, MVD and text (with JSON markup). 
+It is hoped to add XML export later.
 
 The text to image linking tool (TILT) is unfinished, 
 but will be completed soon. AustESE is planned as a 

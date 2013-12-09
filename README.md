@@ -9,15 +9,16 @@ manager. Its purpose is to create digital scholarly
 editions, not to be one.
 
 This installer is for Ubuntu/Debian only. It installs all
-the required deb packages, then creates a blank AustESE
-Drupal directory in the user's web-directory, and then
+the required deb packages, creates a blank AustESE
+Drupal directory in the user's web-directory, and
 uploads a basic database (austese) to MySql. Finally
 it installs the calliope web-service to complete the 
 set. The user can then create projects for building DSEs.
-Completely customised websites can then be constructed, 
-based on the resources managed by the AustESE project 
-on any web-based platform, requiring only the standard 
-web technologies of HTML, Javascript and CSS. 
+Completely customised front-ends or DSE websites can be 
+then constructed, based on the resources managed by the 
+AustESE project on any web-based platform, requiring 
+only the standard web technologies of HTML, Javascript 
+and CSS. 
 
 AustESE is based on the Drupal content management
 system, and requires an Ubuntu or Debian Linux server

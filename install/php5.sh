@@ -16,6 +16,9 @@ PHP5=`which php5`
 if [ -z "$PHP5" ]; then
   ensure apt-get -qq install php5
 fi
+if [ ! -d "/usr/share/php/PEAR" ]; then
+  ensure apt-get -qq install php-pear
+fi
 PHP5XSL=`php5 -m | grep xsl`
 if [ -z "$PHP5XSL" ]; then
   ensure apt-get -qq install php5-xsl
@@ -33,7 +36,10 @@ if [ -z "$IMAGICK" ]; then
 fi
 MONGO=`php5 -m | grep mongo`
 if [ -z "$MONGO" ]; then
-  ensure apt-get -q -y install php5-mongo
+  apt-get -qq install php5-mongo
+  if [ $? -ne 0 ]; then
+    pecl install mongo
+  fi
   $ENABLE_MOD mongo
 fi
 MYSQL=`php5 -m | grep mysql`
@@ -48,8 +54,5 @@ if [ -z "$PHP5GD" ]; then
 fi
 if [ ! -d "/usr/include/php5" ]; then
   ensure apt-get -qq install php5-dev
-fi
-if [ ! -d "/usr/share/php/PEAR" ]; then
-  ensure apt-get -qq install php-pear
 fi
 exit 0

@@ -24,9 +24,11 @@ fi
 # ensure mongo gets installed on 12.04
 MONGO=`php5 -m | grep mongo`
 if [ -z "$MONGO" ]; then
-  apt-get -qq install php5-mongo
+  apt-get --simulate -qq install php5-mongo
   if [ $? -ne 0 ]; then
     pecl install mongo 2>/dev/null 1>/dev/null
+  else
+    apt-get -qq install php5-mongo
   fi
   appendto "/etc/php5/apache2/php.ini" "extension=mongo.so"
   appendto "/etc/php5/cli/php.ini" "extension=mongo.so"

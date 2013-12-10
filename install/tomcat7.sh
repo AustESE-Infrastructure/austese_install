@@ -1,6 +1,6 @@
 #!/bin/sh
 . ./functions/global.sh
-if [ ! -d "/etc/tomcat7" ]; then
+if [ ! -d "/var/lib/tomcat7/conf" ]; then
   echo "installing tomcat7"
   ensure apt-get -qq install tomcat7
 fi

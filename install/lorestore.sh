@@ -8,9 +8,8 @@ if [ -z "$WADR" ] || [ -z "$WUSR" ] || [ -z "$WGRP" ] || [ -z "$LODD" ]; then
   echo "webapps=$WADR apache user=$WUSR apache group=$WGRP lorestore dd=$LODD"
   exit 1
 fi
-ensure wget -q -r -nc -nd -P /tmp https://dl.dropbox.com/u/8415460/tmp/lorestore.war
 if [ -d "$WADR" ]; then
-  ensure cp /tmp/lorestore.war $WADR
+  ensure cp ./objects/lorestore.war $WADR
 else
   echo "tomcat webapps directory not in expected location"
   exit 1

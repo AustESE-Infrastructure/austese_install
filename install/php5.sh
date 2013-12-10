@@ -34,6 +34,12 @@ if [ -z "$MONGO" ]; then
   appendto "/etc/php5/cli/php.ini" "extension=mongo.so"
 fi
 MYSQL=`php5 -m | grep mysql`
+UP_VERSION=`pecl info uploadprogress | grep "Release Version" | awk '{print $3}'`
+if [ -z "$UP_VERSION" ]; then
+  ensure pecl install uploadprogress
+  appendto "/etc/php5/apache2/php.ini" "extension=uploadprogress.so"
+  appendto "/etc/php5/cli/php.ini" "extension=uploadprogress.so"
+fi
 if [ -z "$MYSQL" ]; then
   ensure apt-get -qq install php5-mysql
 fi

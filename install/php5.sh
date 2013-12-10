@@ -20,8 +20,7 @@ fi
 MONGO=`php5 -m | grep mongo`
 if [ -z "$MONGO" ]; then
   ensure apt-get -q -y install php5-mongo
-  appendto /etc/cli/php.ini extension=mongo.so
-  appendto /etc/apache2/php.ini extension=mongo.so 
+  php5enmod mongo
 fi
 MYSQL=`php5 -m | grep mysql`
 if [ -z "$MYSQL" ]; then

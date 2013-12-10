@@ -11,7 +11,7 @@ elif [ -d "$WEBROOT/austese" ]; then
   echo "Exiting..."
   exit 1
 fi
-ensure tar xzf ./objects/austese.tar.gz -C "$WEBROOT"
+ensure cat ./objects/austese.tar.gz.* | tar xz -C "$WEBROOT"
 ensure chown -R www-data "$WEBROOT/austese"
 ensure chgrp -R www-data "$WEBROOT/austese"
 exit 0

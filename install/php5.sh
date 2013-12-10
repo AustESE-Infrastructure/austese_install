@@ -8,14 +8,17 @@ fi
 PHP5XSL=`php5 -m | grep xsl`
 if [ -z "$PHP5XSL" ]; then
   ensure apt-get -qq install php5-xsl
+  php5enmod xsl
 fi
 PHP5CURL=`php5 -m | grep curl`
 if [ -z "$PHP5CURL" ]; then
   ensure apt-get -qq install php5-curl
+  php5enmod curl
 fi
 IMAGICK=`php5 -m | grep imagick`
 if [ -z "$IMAGICK" ]; then
   ensure apt-get -qq install php5-imagick
+  php5enmod imagick
 fi
 MONGO=`php5 -m | grep mongo`
 if [ -z "$MONGO" ]; then
@@ -25,10 +28,12 @@ fi
 MYSQL=`php5 -m | grep mysql`
 if [ -z "$MYSQL" ]; then
   ensure apt-get -qq install php5-mysql
+  php5enmod mysql
 fi
 PHP5GD=`php5 -m | grep gd`
 if [ -z "$PHP5GD" ]; then
   ensure apt-get -qq install php5-gd
+  php5enmod gd
 fi
 if [ ! -d "/usr/include/php5" ]; then
   ensure apt-get -qq install php5-dev

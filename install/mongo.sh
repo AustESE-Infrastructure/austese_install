@@ -21,5 +21,5 @@ ensure pecl install uploadprogress
 appendto /etc/php5/cli/php.ini extension=uploadprogress.so
 appendto /etc/php5/apache2/php.ini extension=uploadprogress.so
 #now preload the mongo database
-ensure mongorestore --host localhost --username admin --password $PASSWORD ./install/dump
+ensure mongorestore --host localhost --username admin --password $PASSWORD ./objects/mongo
 exit 0

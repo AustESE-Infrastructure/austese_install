@@ -15,7 +15,6 @@ ensure ./install/jdk.sh
 ensure ./install/tomcat7.sh
 ensure ./install/drupal.sh
 #ensure ./install/mongo.sh $PASSWORD
-#ensure ./install/mongo-1.4.1.sh
 #ensure ./install/austese.sh
 ensure cat > credentials.txt <<%%
 Drupal username is austese

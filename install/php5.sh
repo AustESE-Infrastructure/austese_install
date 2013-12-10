@@ -39,7 +39,11 @@ MONGO=`php5 -m | grep mongo`
 if [ -z "$MONGO" ]; then
   apt-get -qq install php5-mongo
   if [ $? -ne 0 ]; then
-    pecl install mongo
+    pecl install mongo 2>/dev/null 1>/dev/null
+    if [ $? -ne 0 ]; then
+      $?=0
+      $ENABLE_MOD mongo
+    fi
   fi
   $ENABLE_MOD mongo
 fi

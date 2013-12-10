@@ -34,6 +34,7 @@ if [ -z "$IMAGICK" ]; then
   ensure apt-get -qq install php5-imagick
   $ENABLE_MOD imagick
 fi
+# ensure mongo gets installed on 12.04
 MONGO=`php5 -m | grep mongo`
 if [ -z "$MONGO" ]; then
   apt-get -qq install php5-mongo

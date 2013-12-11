@@ -13,7 +13,7 @@ ensure ./install/php5.sh
 ensure ./install/mysql.sh $PASSWORD
 ensure ./install/jdk.sh
 ensure ./install/tomcat7.sh
-ensure ./install/drupal.sh
+ensure ./install/drupal.sh $PASSWORD
 ensure ./install/mongo.sh $PASSWORD
 ensure ./install/austese.sh $PASSWORD
 ensure ./install/lorestore.sh

@@ -23,7 +23,7 @@ ensure apachectl restart
 ensure /etc/init.d/tomcat7 restart
 ensure cat > credentials.txt <<%%
 Drupal username is austese
-Mysql username is root
+Mysql username is austese 
 Mongo username is admin
 Password for all is $PASSWORD
 %%

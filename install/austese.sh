@@ -12,5 +12,5 @@ if [ ! -z "$AUSTESEDB" ]; then
   fi
 fi
 mysqladmin -u root -p$PASSWORD create austese
-ensure mysql -u root -p$PASSWORD austese < ./objects/austese.sql
+ensure mysql -u root -p$PASSWORD austese < ./objects/austese_all.sql
 exit 0

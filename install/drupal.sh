@@ -30,7 +30,7 @@ if [ $? -ne 0 ]; then
   echo "sed (2) failed on settings.php"
   exit 1
 fi
-ensure chmod 644 $SETTINGS
+ensure chmod 444 $SETTINGS
 ensure chown -R www-data "$WEBROOT/austese"
 ensure chgrp -R www-data "$WEBROOT/austese"
 exit 0

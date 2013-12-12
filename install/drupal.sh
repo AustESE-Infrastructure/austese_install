@@ -23,7 +23,7 @@ ensure chmod 777 $SETTINGS
 sed "s/'password' => 'austese9875\!',/'password' => '$PASSWORD',/" <$SETTINGS >/tmp/settings.php
 cp /tmp/settings.php $SETTINGS
 if [ $? -ne 0 ]; then
-  echo "sed (2) failed on settings.php"
+  echo "sed failed on settings.php"
   exit 1
 fi
 ensure chmod 444 $SETTINGS

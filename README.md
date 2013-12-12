@@ -23,7 +23,7 @@ annotation tool.
 and a citation service. This is currently not done for AustESE.
 
 AustESE is really a kind of back-end or project manager. Its purpose is 
-to create digital scholarly editions, not to be one.
+to *create* digital scholarly editions, not to be one.
 
 Installation 
 ------------ 

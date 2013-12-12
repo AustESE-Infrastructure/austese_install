@@ -10,7 +10,7 @@ getjarpaths()
   return
 }
 JARPATHS=`getjarpaths lib`
-LIBPATH=`java -cp /usr/local/fedora/tomcat/bin/ LibPath`
+LIBPATH=`java -cp /usr/share/tomcat7/bin/ LibPath`
 if [ `echo $LIBPATH | grep -c "/usr/local/lib" ` -eq 0 ] ; then
   LIBPATH=$LIBPATH:/usr/local/lib
 fi

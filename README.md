@@ -66,7 +66,7 @@ and is based at the University of Queensland's eResearch laboratory.
 To Do's
 -------
 
-# NMergeC will remove the file limit and reduce the memory footprint. 
-# XML export needs to be added. The citation service is not done. 
-# Text to image linking is incomplete. 
-# As yet there is no manual.
+* NMergeC will remove the file limit and reduce the memory footprint. 
+* XML export needs to be added. The citation service is not done. 
+* Text to image linking is incomplete. 
+* As yet there is no manual.

@@ -3,11 +3,6 @@
 ensure ./install/environment.sh
 read -p "Password for everything: (jabberw0cky)" PASSWORD
 PASSWORD=${PASSWORD:-jabberw0cky}
-WEBROOT=`./get/webroot.sh`
-if [ $? -ne 0 ]; then
-  echo "webroot ($WEBROOT) empty or not a directory"
-  exit 1
-fi
 ensure ./install/apache.sh
 ensure ./install/php5.sh
 ensure ./install/mysql.sh $PASSWORD

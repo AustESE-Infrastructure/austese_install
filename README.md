@@ -9,21 +9,17 @@ work. It consists of a set of "digital objects", which are mostly
 transcriptions of the text of the documents plus facsimiles of the 
 pages. A DSE supports five basic operations: 
 
-1) Cataloguing via various metadata formats. AustESE maintains metadata 
+1. Cataloguing via various metadata formats. AustESE maintains metadata 
 based on dublin core for each digital object.
-
-2) Markup via standoff properties rather than embedded tags, as this 
+2. Markup via standoff properties rather than embedded tags, as this 
 allows properties to overlap. This is stored in a custom JSON format 
 called STIL (standard interval language)
-
-3) Comparison via multi-version (MVD) documents. The plain text and 
+3. Comparison via multi-version (MVD) documents. The plain text and 
 markup of documents are stored in a merged form. This allows differences 
 to be quickly read rather than computed from the sources.
-
-4) Commentary via Open Annotations, using Lorestore, from the Lore 
+4. Commentary via Open Annotations, using Lorestore, from the Lore 
 annotation tool.
-
-5) Citations (references to parts of the text) via standoff properties 
+5. Citations (references to parts of the text) via standoff properties 
 and a citation service. This is currently not done for AustESE.
 
 AustESE is really a kind of back-end or project manager. Its purpose is 

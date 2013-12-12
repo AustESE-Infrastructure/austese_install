@@ -14,7 +14,24 @@ if [ ! -z "$AUSTESEDB" ]; then
   fi
 fi
 mysql -u root -p$PASSWORD -e "delete from mysql.user where user='austese';"
+if [ $? -ne 0 ]; then
+  echo "failed to delete old austese user in mysql"
+  exit 1
+fi
 mysql -u root -p$PASSWORD -e "flush privileges;"
+if [ $? -ne 0 ]; then
+  echo "failed to flush privileges in mysql"
+  exit 1
+fi
 mysql -u root -p$PASSWORD -e "CREATE USER 'austese'@'localhost' IDENTIFIED BY '$PASSWORD';"
+if [ $? -ne 0 ]; then
+  echo "failed to create user austese in mysql"
+  exit 1
+fi
 mysql -u root -p$PASSWORD -e "grant all privileges on *.* to 'austese'@'localhost';"
+if [ $? -ne 0 ]; then
+  echo "failed to grant privileges to use austese in mysql"
+  exit 1
+fi
+
 exit 0

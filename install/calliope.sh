@@ -1,6 +1,7 @@
 #!/bin/sh
 . ./functions/global.sh
-WADR=`./get/tomcat_webapps_dir.sh`
+CATALINA_BASE=`./get/catalina_base.sh`
+WADR=`$CATALINA_BASE/dir.sh`
 WUSR=`./get/apacheuser.sh`
 WGRP=`./get/apachegroup.sh`
 if [ -z "$WADR" ] || [ ! -d "$WADR" ]; then

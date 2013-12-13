@@ -1,10 +1,12 @@
 #!/bin/sh
 . ./functions/global.sh
-if [ ! -d "/var/lib/tomcat7/conf" ]; then
+CATALINA_HOME=`./get/catalina_home.sh`
+CATALINA_BASE=`./get/catalina_base.sh`
+if [ ! -d "$CATALINA_BASE/conf" ]; then
   echo "installing tomcat7"
   ensure apt-get -qq install tomcat7
 fi
-if [ ! -d "/usr/share/tomcat7/bin" ]; then
+if [ ! -d "$CATALINA_HOME/bin" ]; then
   echo "installing tomcat7-common"
   ensure apt-get -qq install tomcat7-common
 fi

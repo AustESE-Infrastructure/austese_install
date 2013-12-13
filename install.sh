@@ -13,6 +13,7 @@ ensure ./install/mongo.sh $PASSWORD
 ensure ./install/austese.sh $PASSWORD
 ensure ./install/lorestore.sh
 ensure ./install/calliope.sh
+ensure ./install/calliope-libs.sh
 ensure ./install/proxy.sh
 ensure apachectl restart
 ensure /etc/init.d/tomcat7 restart

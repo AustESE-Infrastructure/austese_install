@@ -27,5 +27,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 #now preload the mongo database
+mongo calliope --eval "db.dropDatabase()"
 ensure mongorestore --host localhost --username admin --password $PASSWORD ./objects/dump 2>&1 1>/dev/null
 exit 0

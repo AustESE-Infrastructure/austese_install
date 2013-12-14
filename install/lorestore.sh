@@ -25,6 +25,7 @@ fi
 ensure chown -R $WUSR $LODD
 ensure chgrp -R $WGRP $LODD
 # set up lorestore user
+mysql -u root -p$PASSWORD -e "DROP USER 'lorestore'@'localhost'"
 mysql -u root -p$PASSWORD -e "CREATE USER 'lorestore'@'localhost' IDENTIFIED BY '$PASSWORD';"
 if [ $? -ne 0 ]; then
   echo "failed to create user lorestore in mysql"

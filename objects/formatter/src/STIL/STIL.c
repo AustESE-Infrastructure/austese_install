@@ -154,7 +154,7 @@ int load_stil_markup( const char *mdata, int mlen, range_array *ranges,
     }
     else
     {
-        warning("failed to parse JSON\n");
+        warning("failed to parse JSON. mlen=%d\n",mlen);
         return 0;
     }
 }

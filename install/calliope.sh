@@ -31,6 +31,8 @@ ensure sed -i -e "s/jabberw0cky/$PASSWORD/" /tmp/calliope/WEB-INF/web.xml
 jar cf calliope.war -C calliope WEB-INF
 cd "$CPWD"
 ensure cp /tmp/calliope.war $WADR
+ensure chown tomcat7 $WADR/calliope.war
+ensure chgrp tomcat7 $WADR/calliope.war
 ensure cp ./objects/LibPath.class $TBIN
 ensure cp ./objects/setenv.sh $TBIN
 exit 0

@@ -26,6 +26,8 @@ if [ $USER = "root" ]; then
   gcc -c -DHAVE_EXPAT_CONFIG_H -DHAVE_MEMMOVE -DJNI -I$JDKINC -Iinclude -I../formatter/include -I../formatter/include/STIL -O0 -Wall -g3 -fPIC ../formatter/src/STIL/cJSON.c src/*.c  
   gcc *.o -shared -lexpat -laspell -o libAeseStripper.$LIBSUFFIX
   cp libAeseStripper.$LIBSUFFIX /usr/local/lib
+  rm libAeseStripper.$LIBSUFFIX
+  rm *.o
 else
 	echo "Need to be root. Did you use sudo?"
 fi

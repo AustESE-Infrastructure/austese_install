@@ -11,6 +11,8 @@ if [ -z "$WADR" ] || [ -z "$WUSR" ] || [ -z "$WGRP" ] || [ -z "$LODD" ]; then
 fi
 if [ -d "$WADR" ]; then
   ensure cp ./objects/lorestore.war $WADR
+  ensure chown tomcat7 $WADR/lorestore.war
+  ensure chgrp tomcat7 $WADR/lorestore.war
 else
   echo "tomcat webapps directory not in expected location"
   exit 1

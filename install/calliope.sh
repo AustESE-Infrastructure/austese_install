@@ -15,6 +15,8 @@ if [ -z "$TBIN" ] || [ ! -d "$TBIN" ]; then
   exit 1
 fi
 ensure cp ./objects/calliope.war $WADR
+ensure chown tomcat7 $TBIN/calliope.war
+ensure chgrp tomcat7 $TBIN/calliope.war
 ensure cp ./objects/LibPath.class $TBIN
 ensure cp ./objects/setenv.sh $TBIN
 exit 0

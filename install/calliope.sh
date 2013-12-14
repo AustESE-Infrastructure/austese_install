@@ -19,11 +19,6 @@ if [ -z "$TBIN" ] || [ ! -d "$TBIN" ]; then
   echo "tomcat bin dir not found"
   exit 1
 fi
-<<<<<<< HEAD
-ensure cp ./objects/calliope.war $WADR
-ensure chown tomcat7 $TBIN/calliope.war
-ensure chgrp tomcat7 $TBIN/calliope.war
-=======
 # embed users password into calliope web.xml
 ensure rm -rf /tmp/calliope
 ensure mkdir /tmp/calliope
@@ -36,7 +31,8 @@ ensure sed -i -e "s/jabberw0cky/$PASSWORD/" /tmp/calliope/WEB-INF/web.xml
 jar cf calliope.war -C calliope WEB-INF
 cd "$CPWD"
 ensure cp /tmp/calliope.war $WADR
->>>>>>> 4cf8154eb625271b9f8c8ff9da099dc7549e8820
+ensure chown tomcat7 $WADR/calliope.war
+ensure chgrp tomcat7 $WADR/calliope.war
 ensure cp ./objects/LibPath.class $TBIN
 ensure cp ./objects/setenv.sh $TBIN
 exit 0

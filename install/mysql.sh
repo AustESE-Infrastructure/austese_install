@@ -10,6 +10,9 @@ if [ -z "$MYSQLCLIENT" ]; then
 fi
 ls /etc/apache2/mods-enabled/auth_mysql.load 1> /dev/null 2> /dev/null
 if [ $? -ne 0 ]; then
-  ensure apt-get -qq install libapache2-mod-auth-mysql
+  MOD_AUTH_MYSQL=`apt-cache search libapache2-mod.auth-mysql`
+  if [ ! -z $MOD_AUTH_MYSQL ]; then
+      ensure apt-get -qq install libapache2-mod-auth-mysql
+  fi
 fi
 exit 0

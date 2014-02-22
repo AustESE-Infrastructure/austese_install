@@ -6,13 +6,13 @@ if [ ! -z "$AUSTESEDB" ]; then
   read -p "Erase existing austese database?(y/n) " ANSWER
   if [ "$ANSWER" = "y" ]; then
     ensure mysqladmin -f -u root -p$PASSWORD drop austese
-    ensure mysqladmin -u root -p$PASSWORD create austese
-    ensure mysql -u root -p$PASSWORD austese < ./objects/austese.sql
   else
     echo "Exiting..."
     exit 1
   fi
 fi
+ensure mysqladmin -u root -p$PASSWORD create austese
+ensure mysql -u root -p$PASSWORD austese < ./objects/austese.sql
 mysql -u root -p$PASSWORD -e "delete from mysql.user where user='austese';"
 if [ $? -ne 0 ]; then
   echo "failed to delete old austese user in mysql"
